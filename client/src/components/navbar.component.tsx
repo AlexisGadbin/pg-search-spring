@@ -1,19 +1,18 @@
 import { cn } from '@lib/utils'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import Link from 'next/link'
-import NavSearch from './navbar/nav-search.component'
 import NavUserProfile from './navbar/nav-user-profile.component'
 
-type NavLink = { name: 'home' | 'about' | 'contact'; href: string }
+type NavLink = { name: 'home' | 'search'; href: string }
 
 const navLinks: NavLink[] = [
-  { name: 'home', href: '/examples/dashboard' },
-  { name: 'about', href: '/examples/dashboard' },
-  { name: 'contact', href: '/examples/dashboard' },
+  { name: 'home', href: '/' },
+  { name: 'search', href: '/search' },
 ]
 
 const Navbar = () => {
   const t = useTranslations('nav.links')
+  const activeLocale = useLocale()
 
   return (
     <div className="flex h-16 items-center px-4">
@@ -21,7 +20,7 @@ const Navbar = () => {
         {navLinks.map((link) => (
           <Link
             key={link.name}
-            href="/examples/dashboard"
+            href={'/' + activeLocale + link.href}
             className="text-sm font-medium transition-colors hover:text-primary"
           >
             {t(link.name)}
@@ -29,7 +28,6 @@ const Navbar = () => {
         ))}
       </nav>
       <div className="ml-auto flex items-center space-x-4">
-        <NavSearch />
         <NavUserProfile />
       </div>
     </div>
