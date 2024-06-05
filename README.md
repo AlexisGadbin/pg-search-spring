@@ -23,25 +23,39 @@ Ce projet implémente une recherche floue (fuzzy search) en utilisant PostgreSQL
     cd pg-search-spring
     ```
 
-2. Configurez la base de données
-    ```bash
-    docker compose up -d
-    ```
-
-    Créez une base de données PostgreSQL et mettez à jour le fichier `application.properties` avec vos informations de connexion.
-
-    ```properties
-    spring.datasource.url=jdbc:postgresql://localhost:5432/{{nom de votre base}}
-    spring.datasource.username={{votre_utilisateur}}
-    spring.datasource.password={{votre_mot_de_passe}}
-    ```
-
-3. Construisez et lancez l'application
+2. Construisez et lancez les conteneurs avec Docker Compose
 
     ```bash
-    mvn clean install
-    mvn spring-boot:run
+    docker-compose up --build
     ```
+
+    Cela va :
+    - Créer et démarrer un conteneur PostgreSQL avec une base de données nommée `pg_search`, utilisateur `root` et mot de passe `root`.
+    - Construire l'application Spring Boot à partir du code source et lancer le conteneur.
+
+3. Accédez à l'application
+
+    L'application Spring Boot sera accessible à l'adresse suivante :
+    ```bash
+    http://localhost:8080
+    ```
+
+    La base de données PostgreSQL sera accessible à l'adresse suivante :
+    ```bash
+    jdbc:postgresql://localhost:5432/pg_search
+    ```
+
+4. (Optionnel) Pour arrêter et supprimer les conteneurs
+
+    ```bash
+    docker-compose down
+    ```
+
+### Notes
+
+- Assurez-vous que les ports 5432 (pour PostgreSQL) et 8080 (pour l'application Spring Boot) sont libres sur votre machine avant de lancer les conteneurs.
+- Vous pouvez personnaliser les informations de connexion à la base de données dans le fichier `docker-compose.yml` si nécessaire.
+
 
 ## Endpoints
 

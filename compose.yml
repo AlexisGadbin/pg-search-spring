@@ -1,13 +1,28 @@
+version: "3.8"
 services:
-  database:
+  postgres:
     image: postgres:15
-    ports:
-      - "127.0.0.1:5432:5432"
-    volumes:
-      - "psql-data:/var/lib/postgresql/data"
     environment:
-      - POSTGRES_USER=root
-      - POSTGRES_PASSWORD=root
+      POSTGRES_DB: pg_search
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/pg_search?useSSL=false&requireSSL=false
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
 
 volumes:
-  psql-data:
+  postgres_data:
