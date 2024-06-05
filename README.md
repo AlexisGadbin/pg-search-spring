@@ -66,6 +66,7 @@ Ce projet implémente une recherche floue (fuzzy search) en utilisant PostgreSQL
 
 - Assurez-vous que les ports 5432 (pour PostgreSQL) et 8080 (pour l'application Spring Boot) sont libres sur votre machine avant de lancer les conteneurs.
 - Vous pouvez personnaliser les informations de connexion à la base de données dans le fichier `docker-compose.yml` si nécessaire.
+- Un script python est présent dans le dossier `scripts` pour générer le fichier `data.sql` contenant les données à insérer dans la base de données à partir du fichier `artists.csv`.
 
 ## Endpoints
 
