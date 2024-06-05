@@ -5,17 +5,17 @@
   "nav": {
     "links": {
       "home": "Home",
-      "about": "About",
-      "contact": "Contact"
-    },
-    "search": {
-      "placeholder": "Search..."
+      "search": "Fuzzy search Postgres"
     },
     "user-profile": {
       "profile": "Profile",
       "settings": "Settings",
       "logout": "Logout"
     }
+  },
+  "search": {
+    "placeholder": "Search...",
+    "label": "artists"
   },
   "language": {
     "fr": "French",
