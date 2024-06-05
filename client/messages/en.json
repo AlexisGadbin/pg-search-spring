@@ -1,0 +1,29 @@
+{
+  "site": {
+    "title": "Boilerplate for nextJs used as a client"
+  },
+  "nav": {
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "search": {
+      "placeholder": "Search..."
+    },
+    "user-profile": {
+      "profile": "Profile",
+      "settings": "Settings",
+      "logout": "Logout"
+    }
+  },
+  "language": {
+    "fr": "French",
+    "en": "English"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}
