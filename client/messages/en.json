@@ -1,6 +1,9 @@
 {
   "site": {
-    "title": "Boilerplate for nextJs used as a client"
+    "title": "Implementing Fuzzy Search Postgres with Spring Boot",
+    "description": "The database contains a list of artists from the museum of modern art that you can find here: ",
+    "source": "Link to the dataset",
+    "explanation": "You can search for an artist by their name + surname."
   },
   "nav": {
     "links": {

@@ -1,6 +1,9 @@
 {
   "site": {
-    "title": "Boilerplate pour nextJs utilisé en tant que client"
+    "title": "Implémentation de la recherche floue Postgres avec Spring Boot",
+    "description": "La base de données contient une liste d'artiste du museum d'art moderne que vous pouvez retrouver ici : ",
+    "source": "Lien vers le dataset",
+    "explanation": "Vous pouvez rechercher un artista par son nom + prenom."
   },
   "nav": {
     "links": {
